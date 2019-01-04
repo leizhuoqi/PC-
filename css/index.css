@@ -88,7 +88,7 @@ img{display: block;}
     top: 0;  /*为了让第一次有过渡效果*/
     height: 500%;
     width: 100%;
-    transition: top 1s;
+    transition: top 0.8s;
 }
 .contentList>li{
     position: relative;
