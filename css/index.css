@@ -9,12 +9,19 @@ img{display: block;}
 .clearfix{*zoom: 1;}
 .clearfix:after{content: "";display: block;clear: both;}
 
-
+/*头部样式*/
+/*
+  选择器是从右往左解析，这样效率更高
+  选择器有开销的，不同选择器开销不同
+    id选择器<类选择器
+  结论：选择器一般最多3-4个左右
+*/
 #wrap{
+    position: relative;
     height: 100%;
 }
 .header{
-    background: pink;
+    position: relative;
 }
 .header-main{
     background: deeppink;
@@ -40,9 +47,6 @@ img{display: block;}
     margin-left: 40px;
     cursor: pointer;
 }
-.nav li img{
-    height: 100%;
-}
 .nav li:hover .down{
     width: 100%;
 }
@@ -56,5 +60,76 @@ img{display: block;}
     width: 0;
     transition: width 1s;
     overflow: hidden;
-    
 }
+.header-main .arrow{
+    position: absolute;
+    left: 50%;
+    bottom: -11px;
+    z-index: 10;
+    width: 21px;
+    height: 11px;
+    background-image: url('../img/arrow.png');
+    background-repeat: no-repeat;
+    transition: left 1s;
+}
+
+/*内容区*/
+.content{
+    position: absolute;
+    top: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+.contentList{
+    position: absolute;
+    left: 0;
+    top: 0;  /*为了让第一次有过渡效果*/
+    height: 500%;
+    width: 100%;
+    transition: top 1s;
+}
+.contentList>li{
+    position: relative;
+    height: 20%;
+    background: pink;
+}
+.contentList section{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -260px;
+    margin-left: -550px;
+    width: 1100px;
+    height: 520px;
+    background: skyblue;
+}
+
+/*
+  垂直水平居中方案
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    margin auto
+ */
+/*
+ 只能用于已知宽高
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ margin-top: -260px;
+ margin-left: -550px;
+ */
+/*position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);*/
+/*
+给父元素设置
+display: flex;
+justify-content: center;
+align-items: center;
+*/
