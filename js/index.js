@@ -9,8 +9,10 @@ window.addEventListener('DOMContentLoaded',function(){
  var contentHeight = contentNode.offsetHeight;
  var arrowHalfWidth = arrowNode.offsetWidth/2;
  var nowIndex = 0;
+ var timer = null;
 
- header();
+
+    header();
     function header(){
         arrowNode.style.left = headerLiNodes[0].getBoundingClientRect().left + liHalfWidth - arrowHalfWidth + 'px';
         headerDownNodes[0].style.width = '100%';
@@ -34,9 +36,9 @@ window.addEventListener('DOMContentLoaded',function(){
             - arrowHalfWidth + 'px';
         contentList.style.top = - nowIndex * contentHeight + 'px';
     }
-    var timer = null;
 
-        content();
+
+    content();
     function content(){
         document.onmousewheel = wheel;
         document.addEventListener('DOMMouseScroll',wheel);
@@ -84,10 +86,49 @@ window.addEventListener('DOMContentLoaded',function(){
     }
 
 
+
+
     window.onresize = function () {
         arrowNode.style.left = headerLiNodes[nowIndex].offsetLeft + headerDownNodes[nowIndex].offsetWidth/2
             - arrowHalfWidth + 'px';
         contentList.style.top = -nowIndex * contentHeight +'px';
     }
 
+
+
+
+    banner();
+    function banner(){
+        var banLiNodes = document.querySelectorAll('.banner li')
+        var circlePoint = document.querySelector('.circlePoint');
+        var pointLiNodes = document.querySelectorAll('.circlePoint li');
+        var nowIndex = 0;
+        var lastIndex = 0;
+        var lastTime = 0;
+        for (var i = 0; i <pointLiNodes.length; i++) {
+            pointLiNodes[i].index = i;
+            pointLiNodes[i].onclick = function(){
+                var nowTime = new Date();
+                if(nowTime - lastTime <2000) return;
+                lastTime = nowTime;
+                 nowIndex = this.index;
+                if(nowIndex == lastIndex) return;
+                if(nowIndex < lastIndex){
+                    banLiNodes[nowIndex].className = 'common-title left-show';
+                    banLiNodes[lastIndex].className = 'common-title right-hide'
+
+                }else{
+                    banLiNodes[nowIndex].className = 'common-title right-show';
+                    banLiNodes[lastIndex].className = 'common-title left-hide'
+
+
+                }
+                pointLiNodes[lastIndex].className = '';
+                pointLiNodes[nowIndex].className = 'active';
+                console.log(111)
+                lastIndex = nowIndex ;
+            }
+        }
+
+    }
 })
