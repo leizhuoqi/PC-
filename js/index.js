@@ -131,4 +131,18 @@ window.addEventListener('DOMContentLoaded',function(){
         }
 
     }
+    bannerAuto();
+   function bannerAuto(){
+       timer = setInterval(function(){
+           nowIndex++;
+           if(nowIndex >= 4) nowIndex =0 ;
+           banLiNodes[nowIndex].className = 'common-title right-show';
+           banLiNodes[lastIndex].className = 'common-title left-hide'
+
+           pointLiNodes[lastIndex].className = '';
+           pointLiNodes[nowIndex].className = 'active';
+
+           lastIndex = nowIndex;
+       },2200)
+   }
 })
