@@ -94,6 +94,7 @@ img{display: block;}
     position: relative;
     height: 20%;
     background: pink;
+    background-repeat: no-repeat;
 }
 .contentList section{
     position: absolute;
@@ -105,31 +106,109 @@ img{display: block;}
     height: 520px;
     background: skyblue;
 }
+.contentList>li:nth-child(1){
+    background-image: url("../img/bg1.jpg");
+}
+.contentList>li:nth-child(2){
+    background-image: url("../img/bg2.jpg");
+}
+.contentList>li:nth-child(3){
+    background-image: url("../img/bg3.jpg");
+}
+.contentList>li:nth-child(4){
+    background-image: url("../img/bg4.jpg");
+}
+.contentList>li:nth-child(5){
+    background-image: url("../img/bg5.jpg");
+}
+.firstScreen .banner{
+    height: 100%;
 
-/*
-  垂直水平居中方案
-    position absolute
-    top 0
-    right 0
-    bottom 0
-    left 0
-    margin auto
- */
-/*
- 只能用于已知宽高
- position: absolute;
- top: 50%;
- left: 50%;
- margin-top: -260px;
- margin-left: -550px;
- */
-/*position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);*/
-/*
-给父元素设置
-display: flex;
-justify-content: center;
-align-items: center;
-*/
+}
+.common-title{
+    color:#009ee0;
+    font-size:80px;
+    line-height:0.8;
+    font-weight:bold;
+    letter-spacing:-5px;
+}
+.firstScreen .banner li{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    color:#fff;
+    visibility: hidden;
+    text-align: center;
+    line-height: 520px;
+}
+.firstScreen .banner .active{
+    visibility: visible;
+}
+.firstScreen .banner li:nth-child(1){
+    background:#dc6c5f;
+}
+.firstScreen .banner li:nth-child(2){
+    background:#95dc84;
+}
+.firstScreen .banner li:nth-child(3){
+    background:#64b9d2;
+}
+.firstScreen .banner li:nth-child(4){
+    background:#000000;
+}
+.firstScreen .circlePoint{
+    position:absolute;
+    left:50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+.firstScreen .circlePoint li{
+    float: left;
+    width:20px;
+    height:20px;
+    background:rgba(255,255,255,.5);
+    margin:2px;
+    box-shadow: 0 0 4px rgba(25,25,25,.8);
+    border-radius: 50%;
+}
+.firstScreen .circlePoint .active{
+    background: #fff;
+}
+.banner .left-hide {
+    visibility: hidden;
+    animation: leftHide 2s linear;
+}
+.banner .left-show{
+    visibility: visible;
+    animation: leftShow 2s linear ;
+}
+.banner .right-hide{
+    visibility: hidden;
+    animation: rightHide 2s linear ;
+}
+.banner .right-show{
+    visibility: visible;
+    animation: rightShow 2s linear ;
+}
+@keyframes left-hide{
+     0%{visibility: visible}
+     50%{transform:translateX(-40%) rotateY(30deg) scale(.8)}
+     100%{visibility:hidden;transform: translateZ(-200px)}
+ }
+@keyframes left-show{
+    0%{visibility: hidden ;transform: translateZ(-200px)}
+    50%{transform:translateX(-40%) rotateY(30deg) scale(.8)}
+    100%{visibility:visible}
+}
+@keyframes right-hide{
+    0%{visibility: visible}
+    50%{transform:translateX(40%) rotateY(-30deg) scale(.8)}
+    100%{visibility:hidden;transform: translateZ(-200px)}
+}
+@keyframes right-show{
+    0%{visibility: hidden ;transform: translateZ(-200px)}
+    50%{transform:translateX(40%) rotateY(-30deg) scale(.8)}
+    100%{visibility:visible}
+}
