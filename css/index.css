@@ -1,13 +1,38 @@
 /*reset css*/
-html,body{height: 100%;overflow: hidden;}
-html,body,h1,h2,h3,h4,h5,h6,p,ul,li{margin: 0;padding: 0;font: 14px "微软雅黑";}
-a{text-decoration: none;display: block;}
-li{list-style: none;}
-img{display: block;}
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+    padding: 0;
+    font: 14px "微软雅黑";
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    display: block;
+}
 
 /*清除浮动*/
-.clearfix{*zoom: 1;}
-.clearfix:after{content: "";display: block;clear: both;}
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
 
 /*头部样式*/
 /*
@@ -16,44 +41,56 @@ img{display: block;}
     id选择器<类选择器
   结论：选择器一般最多3-4个左右
 */
-#wrap{
+#wrap {
     position: relative;
     height: 100%;
 }
-.header{
+
+.header {
     position: relative;
 }
-.header-main{
+
+.header-main {
     /*background: deeppink;*/
     width: 1100px;
     height: 80px;
     margin: 0 auto;
 }
-.logo{
+
+.logo {
     float: left;
     margin-top: 15px;
 }
-.music-icon{
+.logo img{
+    width:188px;
+    height:62px;
+}
+.music-icon {
     float: left;
     margin-top: 50px;
 }
-.nav{
+
+.nav {
     float: right;
     margin-top: 50px;
 }
-.nav li{
+
+.nav li {
     position: relative;
     float: left;
     margin-left: 40px;
     cursor: pointer;
 }
-.nav li:hover .down{
+
+.nav li:hover .down {
     width: 100%;
 }
-.nav li .up{
+
+.nav li .up {
     color: #009EE0;
 }
-.nav li .down{
+
+.nav li .down {
     position: absolute;
     left: 0;
     top: 0;
@@ -61,7 +98,8 @@ img{display: block;}
     transition: width 1s;
     overflow: hidden;
 }
-.header-main .arrow{
+
+.header-main .arrow {
     position: absolute;
     left: 50%;
     bottom: -11px;
@@ -74,7 +112,7 @@ img{display: block;}
 }
 
 /*内容区*/
-.content{
+.content {
     position: absolute;
     top: 80px;
     bottom: 0;
@@ -82,22 +120,25 @@ img{display: block;}
     right: 0;
     overflow: hidden;
 }
-.contentList{
+
+.contentList {
     position: absolute;
     left: 0;
-    top: 0;  /*为了让第一次有过渡效果*/
+    top: 0; /*为了让第一次有过渡效果*/
     height: 500%;
     width: 100%;
     transition: top 0.8s;
 }
-.contentList>li{
+
+.contentList > li {
     position: relative;
     height: 20%;
-    background: pink;
+    /*background: pink;*/
     background-repeat: no-repeat;
     background-size: 100%;
 }
-.contentList section{
+
+.contentList section {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -107,113 +148,460 @@ img{display: block;}
     height: 520px;
     /*background: skyblue;*/
 }
-.contentList>li:nth-child(1){
+
+.contentList > li:nth-child(1) {
     background-image: url("../img/xiazi.jpg");
+}
 
+.contentList > li:nth-child(2) {
+    background-image: url("../img/xiazi.jpg");
+}
 
+.contentList > li:nth-child(3) {
+    background-image: url("../img/xiazi.jpg");
+}
 
+.contentList > li:nth-child(4) {
+    background-image: url("../img/xiazi.jpg");
 }
-.contentList>li:nth-child(2){
-    background-image: url("../img/bg2.jpg");
+
+.contentList > li:nth-child(5) {
+    background-image: url("../img/xiazi.jpg");
 }
-.contentList>li:nth-child(3){
-    background-image: url("../img/bg3.jpg");
-}
-.contentList>li:nth-child(4){
-    background-image: url("../img/bg4.jpg");
-}
-.contentList>li:nth-child(5){
-    background-image: url("../img/bg5.jpg");
-}
-.firstScreen .banner{
+
+.firstScreen .banner {
     height: 100%;
     transform-style: preserve-3d;
     perspective: 1000px;
 }
-.common-title{
-    color:#009ee0;
-    font-size:80px;
-    line-height:0.8;
-    font-weight:bold;
-    letter-spacing:-5px;
+
+.common-title {
+    color: #009ee0;
+    font-size: 80px;
+    line-height: 0.8;
+    font-weight: bold;
+    letter-spacing: -5px;
 }
-.firstScreen .banner li{
+
+.firstScreen .banner li {
     position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    color:#fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
     visibility: hidden;
     text-align: center;
     line-height: 520px;
 }
-.firstScreen .banner .active{
+
+.firstScreen .banner .active {
     visibility: visible;
 }
-.firstScreen .banner li:nth-child(1){
-    background:#dc6c5f;
+
+.firstScreen .banner li:nth-child(1) {
+    background: #dc6c5f;
 }
-.firstScreen .banner li:nth-child(2){
-    background:#95dc84;
+
+.firstScreen .banner li:nth-child(2) {
+    background: #95dc84;
 }
-.firstScreen .banner li:nth-child(3){
-    background:#64b9d2;
+
+.firstScreen .banner li:nth-child(3) {
+    background: #64b9d2;
 }
-.firstScreen .banner li:nth-child(4){
-    background:#000000;
+
+.firstScreen .banner li:nth-child(4) {
+    background: #000000;
 }
-.firstScreen .circlePoint{
-    position:absolute;
-    left:50%;
+
+.firstScreen .circlePoint {
+    position: absolute;
+    left: 50%;
     bottom: 0;
     transform: translateX(-50%);
 }
-.firstScreen .circlePoint li{
+
+.firstScreen .circlePoint li {
     float: left;
-    width:20px;
-    height:20px;
-    background:rgba(255,255,255,.5);
-    margin:2px;
-    box-shadow: 0 0 4px rgba(25,25,25,.8);
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, .5);
+    margin: 2px;
+    box-shadow: 0 0 4px rgba(25, 25, 25, .8);
     border-radius: 50%;
 }
-.firstScreen .circlePoint .active{
+
+.firstScreen .circlePoint .active {
     background: #fff;
 }
+
 .firstScreen .banner .left-hide {
     visibility: hidden;
-    animation: leftHide 2s ease-in-out;
+    animation: leftHide 1.3s ease-in-out;
 }
-.firstScreen .banner .left-show{
+
+.firstScreen .banner .left-show {
     visibility: visible;
-    animation: leftShow 2s ease-in-out ;
+    animation: leftShow 1.3s ease-in-out;
 }
-.firstScreen .banner .right-hide{
+
+.firstScreen .banner .right-hide {
     visibility: hidden;
-    animation: rightHide 2s ease-in-out;
+    animation: rightHide 1.3s ease-in-out;
 }
-.firstScreen .banner .right-show{
+
+.firstScreen .banner .right-show {
     visibility: visible;
-    animation: rightShow 2s ease-in-out ;
+    animation: rightShow 1.3s ease-in-out;
 }
-@keyframes leftHide{
-     0%{visibility: visible}
-     50%{transform:translateX(-40%) rotateY(30deg) scale(.3)}
-     100%{visibility:hidden;transform: translateZ(-200px)}
+
+@keyframes leftHide {
+    0% {
+        visibility: visible
+    }
+    50% {
+        transform: translateX(-40%) rotateY(30deg) scale(.6)
+    }
+    100% {
+        visibility: hidden;
+        transform: translateZ(-200px)
+    }
+}
+
+@keyframes leftShow {
+    0% {
+        visibility: hidden;
+        transform: translateZ(-200px)
+    }
+    50% {
+        transform: translateX(-40%) rotateY(30deg) scale(.6)
+    }
+    100% {
+        visibility: visible
+    }
+}
+
+@keyframes rightHide {
+    0% {
+        visibility: visible
+    }
+    50% {
+        transform: translateX(40%) rotateY(-30deg) scale(.6)
+    }
+    100% {
+        visibility: hidden;
+        transform: translateZ(-200px)
+    }
+}
+
+@keyframes rightShow {
+    0% {
+        visibility: hidden;
+        transform: translateZ(-200px)
+    }
+    50% {
+        transform: translateX(40%) rotateY(-30deg) scale(.6)
+    }
+    100% {
+        visibility: visible
+    }
+}
+
+.commonText {
+    color: white;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.course-content {
+    width: 400px;
+    height: 400px;
+    margin-left: 50px;
+}
+
+.course-title {
+    margin: 50px;
+
+}
+
+.course {
+    position: relative;
+}
+
+.course-list {
+    position: absolute;
+    top: 70px;
+    right: 50px;
+    width: 480px;
+
+}
+
+.course-list li {
+    float: left;
+    /*background: pink;*/
+    width: 120px;
+    height: 132px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    /*transform: rotateY(180deg);*/
+}
+
+.course-list .front {
+    background-image: url("../img/pcwelt.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    /*transform: rotateY(180deg);*/
+    /*transition: transform 1s;*/
+}
+
+.course .course-list .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #009ee0;
+    padding: 15px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    /*transition: transform 1s;*/
+    transform: rotateY(180deg);
+}
+
+.course-list li:hover {
+    transform: rotateY(180deg);
+}
+
+.works-title {
+    margin: 50px 0 100px 50px;
+}
+
+.thirdScreen .works-list {
+    margin: 50px;
+    overflow: hidden;
+}
+
+.thirdScreen .works-list li {
+    float: left;
+    /*background: pink;*/
+    width: 220px;
+    height: 133px;
+    margin: 0 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.thirdScreen .works-list li:last-child {
+    width: 332px;
+}
+
+.thirdScreen .works-list .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(25, 25, 25, 0.8);
+    color: #fff;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.thirdScreen .works-list .icon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    background-image: url("../img/zoomico.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    width: 32px;
+    height: 34px;
+    transition: background-position 0.5s;
+}
+
+.thirdScreen .works-list li img {
+    transition: transform 0.5s;
+}
+
+.thirdScreen .works-list li:hover .mask {
+    opacity: 1;
+}
+
+.thirdScreen .works-list li:hover .icon {
+    background-position: 0 -35px;
+}
+
+.thirdScreen .works-list li:hover img {
+    transform: scale(1.2) rotate(-15deg);
+}
+
+.thirdScreen .works .robot {
+    position: absolute;
+    left: 900px;
+    top: 170px;
+    width: 167px;
+    height: 191px;
+    background-image: url("../img/robot.png");
+    background-repeat: no-repeat;
+    animation: robotMove 4s ease-in-out infinite;
+}
+
+@keyframes robotMove {
+    0% {
+    }
+    49.99% {
+        transform: translate(-500px)
+    }
+    50% {
+        transform: translate(-500px) rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+.fourthScreen .about .about-title {
+    margin: 50px 0 100px 50px;
+}
+
+.fourthScreen .about .about-content {
+    width: 400px;
+    margin-left: 50px;
+}
+
+.fourthScreen .about .greenLine {
+    position: absolute;
+    left: 555px;
+    top: -12px;
+    width: 357px;
+    height: 998px;
+    background-image: url(" ../img/greenLine.png");
+    background-repeat: no-repeat;
+}
+.fourthScreen .about .changeImg{
+    width: 260px;
+    height: 200px;
+    border: 5px solid rgba(255,255,255,0.5);
+    border-radius: 8px;
+    position: absolute;
+}
+.fourthScreen .about .firstImg {
+    left: 750px;
+    top: 50px;
+    /*background-image: url("../img/about2.jpg");*/
+    /*background-repeat: no-repeat;*/
+}
+
+.fourthScreen .about .secondImg {
+    left: 600px;
+    top: 290px;
+    /*background-image: url("../img/about4.jpg");*/
+    /*background-repeat: no-repeat;*/
+}
+.about .firstImg li,.about .secondImg li{
+    float: left;
+    width:130px;
+    height: 100px;
+    overflow: hidden;
+}
+.about .firstImg li div,.about .secondImg li div{
+    transition: transform 0.7s;
+    height: 100%;
+}
+.changeImg ul{
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.fourthScreen .about .firstImg div{
+   background-image: url("../img/about2.jpg");
+    background-repeat: no-repeat;
+
+}
+.fourthScreen .about .secondImg div{
+    background-image: url("../img/about4.jpg");
+}
+.fourthScreen .about .changeImg ul li:nth-child(1) div{
+    background-position: 0 0;
+}
+.fourthScreen .about .changeImg ul li:nth-child(2) div{
+    background-position: 100% 0;
+}
+.fourthScreen .about .changeImg ul li:nth-child(3) div{
+    background-position:0  100%;
+}
+.fourthScreen .about .changeImg ul li:nth-child(4) div{
+    background-position: 100% 100%;
+}
+.fourthScreen .about .changeImg ul:hover li:nth-child(1) div{
+    transform: translateY(100%);
+}
+.fourthScreen .about .changeImg ul:hover li:nth-child(2) div{
+    transform: translateX(-100%);
+}
+.fourthScreen .about .changeImg ul:hover li:nth-child(3) div{
+    transform: translateX(100%);
+}
+.fourthScreen .about .changeImg ul:hover li:nth-child(4) div{
+    transform: translateY(-100%);
  }
-@keyframes leftShow{
-    0%{visibility: hidden ;transform: translateZ(-200px)}
-    50%{transform:translateX(-40%) rotateY(30deg) scale(.3)}
-    100%{visibility:visible}
+.fifthScreen .team-title{
+    float: left;
+    margin:50px;
+    width:400px;
 }
-@keyframes rightHide{
-    0%{visibility: visible}
-    50%{transform:translateX(40%) rotateY(-30deg) scale(.3)}
-    100%{visibility:hidden;transform: translateZ(-200px)}
+.fifthScreen .team-content{
+    float: right;
+    width:400px;
+    margin: 50px;
 }
-@keyframes rightShow{
-    0%{visibility: hidden ;transform: translateZ(-200px)}
-    50%{transform:translateX(40%) rotateY(-30deg) scale(.3)}
-    100%{visibility:visible}
+.fifthScreen  .team-list{
+    position: absolute;
+    top:230px;
+    width: 944px;
+    height: 448px;
+
+}
+.fifthScreen  .team-list li{
+    float: left;
+    width: 236px;
+    height:100%;
+    background-image: url("../img/team.png");
+    background-repeat: no-repeat;
+}
+.fifthScreen  .team-list li:nth-child(1){
+    background-position: 3px 0px ;
+}
+.fifthScreen  .team-list li:nth-child(2){
+    background-position: -230px 0px ;
+}
+.fifthScreen  .team-list li:nth-child(3){
+    background-position: -483px 0px ;
+}
+.fifthScreen  .team-list li:nth-child(4){
+    background-position: -710px 0px ;
+}
+.content .navBar{
+    position: absolute;
+    top:50%;
+    right:0;
+    margin-top: -80px;
+}
+.content .navBar li{
+    width:20px;
+    height: 20px;
+    background: rgba(255,255,255,.5);
+    margin:10px;
+    border-radius:50%;
+    box-shadow: 0 0 4px rgba(25,25,25,.8);
+}
+.content .navBar .active{
+    background: #fff;
 }
