@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            width: 20px;
+            height: 20px;
+            background: deeppink;
+        }
+        .test{
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: #000000
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+
+</body>
+<script type="text/javascript">
+    window.onload = function () {
+        var box = document.getElementById('box');
+        var deg = 0;
+        var boxLeft = box.offsetLeft;
+        var boxTop = box.offsetTop;
+        var scale = 100;
+        setInterval(function(){
+          deg++;
+          var rad = deg*Math.PI/180;
+          var nowLeft = rad*scale*0.5 + boxLeft +'px';
+          var  nowTop =Math.sin(rad)*scale*2 + boxTop + 'px';
+          box.style.left = nowLeft;
+          box.style.top = nowTop;
+          var box1 = document.createElement('div');
+          box1.className = 'test';
+            box1.style.left = nowLeft;
+            box1.style.top = nowTop;
+            document.body.appendChild(box1);
+        },20)
+    }
+</script>
+</html>

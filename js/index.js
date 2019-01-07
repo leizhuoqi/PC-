@@ -12,7 +12,8 @@ window.addEventListener('DOMContentLoaded',function(){
  var lastIndex= 0;
  var timer = null;
     var navLiNodes = document.querySelectorAll('.content .navBar li');
-
+    var musicNode = document.querySelector('.music-icon')
+var audioNode = document.querySelector('.header .music-icon audio')
 
     header();
     function header(){
@@ -191,8 +192,19 @@ window.addEventListener('DOMContentLoaded',function(){
         }
 
     }
-
-
+        musicPlay()
+        function musicPlay(){
+           musicNode.onclick = function () {
+               if(audioNode.paused){
+                   console.log(111)
+                   audioNode.play();
+                   this.style.backgroundImage = 'url("../img/musicon.gif")';
+               }else{
+                   audioNode.pause();
+                   this.style.backgroundImage = 'url("../img/musicoff.gif")'
+               }
+           }
+        }
 
 
     window.onresize = function () {
