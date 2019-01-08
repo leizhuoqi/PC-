@@ -22,9 +22,33 @@
 <script type="text/javascript">
     window.onload = function () {
         var myCanvas = document.getElementById('myCanvas');
-
-        if()
-
+        var circleArr = [];
+        if(myCanvas.getContext){
+            var ctx = myCanvas.getContext('2d');
+           setInterval(function(){
+               for (var i = 0; i <circleArr .length; i++) {
+                   ctx.fillStyle = 'rgba('+ circleArr[i].r +','+ circleArr[i].g +','+ circleArr[i].b +',1)'
+                   ctx.beginPath();
+                   //(横坐标，纵坐标，半径，起始弧度，结束弧度，顺时针/逆时针)
+                   ctx.arc(circleArr[i].x,circleArr[i].y,10,0,2*Math.PI)
+                   ctx.fill()
+               }
+           },100)
+        }
+        setInterval(function(){
+            var r = Math.round(Math.random()*255);
+            var g = Math.round(Math.random()*255);
+            var b = Math.round(Math.random()*255);
+            var x = Math.random()*myCanvas.offsetWidth;
+            var y = Math.random()*myCanvas.offsetHeight;
+            circleArr.push({
+                r:r,
+                g:g,
+                b:b,
+                x:x,
+                y:y,
+            })
+        },100)
     }
 </script>
 </html>

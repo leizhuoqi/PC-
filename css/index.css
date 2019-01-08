@@ -72,6 +72,7 @@ img {
     background-image: url("../img/musicoff.gif");
     background-repeat: no-repeat;
     margin-top: 50px;
+    cursor: pointer;
 }
 
 .nav {
@@ -140,6 +141,7 @@ img {
     /*background: pink;*/
     background-repeat: no-repeat;
     background-size: 100%;
+    overflow: hidden;
 }
 
 .contentList section {
@@ -177,6 +179,7 @@ img {
     height: 100%;
     transform-style: preserve-3d;
     perspective: 1000px;
+    transition: transform 1.1s;
 }
 
 .common-title {
@@ -311,7 +314,9 @@ img {
         visibility: visible
     }
 }
-
+.plane1{ width:359px; height:283px; background:url(../img/plane1.png) no-repeat; position:absolute; left:300px; top:-100px; transition:1s;}
+.plane2{ width:309px; height:249px; background:url(../img/plane2.png) no-repeat; position:absolute; left:-100px; top:200px; transition:1s;}
+.plane3{ width:230px; height:182px; background:url(../img/plane3.png) no-repeat; position:absolute; left:300px; top:400px; transition:1s;}
 .commonText {
     color: white;
     line-height: 1.5;
@@ -382,10 +387,15 @@ img {
 .works-title {
     margin: 50px 0 100px 50px;
 }
+.pencel1{ width:180px; height:97px; background:url(../img/pencel1.png) no-repeat; position:absolute; transition:1s; left:500px; top:0;}
+.pencel2{ width:268px; height:38px; background:url(../img/pencel2.png) no-repeat; position:absolute; transition:1s; left:300px; top:250px;}
+.pencel3{ width:441px; height:231px; background:url(../img/pencel3.png) no-repeat; position:absolute; transition:1s; left:650px; top:300px;}
 
 .thirdScreen .works-list {
+    position: relative;
     margin: 50px;
     overflow: hidden;
+    z-index: 10;
 }
 
 .thirdScreen .works-list li {
@@ -495,6 +505,7 @@ img {
     border: 5px solid rgba(255,255,255,0.5);
     border-radius: 8px;
     position: absolute;
+    transition:transform 1s;
 }
 .fourthScreen .about .firstImg {
     left: 750px;
@@ -560,15 +571,19 @@ img {
     float: left;
     margin:50px;
     width:400px;
+    transition: transform 1s;
 }
 .fifthScreen .team-content{
     float: right;
     width:400px;
     margin: 50px;
+    transition: transform 1s;
 }
 .fifthScreen  .team-list{
     position: absolute;
     top:230px;
+    left:50%;
+    margin-left: -472px;
     width: 944px;
     height: 448px;
 
@@ -608,4 +623,42 @@ img {
 }
 .content .navBar .active{
     background: #fff;
+}
+.bootAnimation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    /*background: pink;*/
+}
+.bootAnimation .bootAnimationTop{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:100%;
+    height: 50%;
+    background: #009ee0;
+    transition:height 1s;
+
+}
+.bootAnimation .bootAnimationBottom{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: #009ee0;
+    transition:height 1s;
+}
+.bootAnimation  .line{
+    position: absolute;
+    left: 0;
+    top:50%;
+    transform: translateY(-50%);
+    width:0;
+    height: 4px;
+    background: #fff;
+    transition:opacity 1s;
 }
